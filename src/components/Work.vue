@@ -2,25 +2,16 @@
 <template>
     <div>
         <grid :cols="3" :show-lr-borders="false">
-            <!-- <grid-item v-for="i in 6" :key="i">
-                <span class="grid-center">{{i}}</span>
-            </grid-item> -->
-            <grid-item>
-                <span class="grid-center">我的任务</span>
-            </grid-item>
-            <grid-item>
-                <span class="grid-center">签到</span>
-            </grid-item>
-            <grid-item>
-                <span class="grid-center">潇洒的</span>
-            </grid-item>
-            <grid-item>
-                <span class="grid-center">添加</span>
+            <grid-item v-for="i in Grouplist" :key="i.id" :link="{ path: i.pathrouter }">
+                <img slot="icon" :src="i.icon">
+                <span slot="label">{{i.name}}</span>
+                <!-- <span class="grid-center">{{i.name}}</span> -->
             </grid-item>
         </grid>
     </div>
 </template>
 <script>
+/* eslint-disable */
 import {
   Card,
   XHeader,
@@ -31,6 +22,7 @@ import {
   Tabbar,
   TabbarItem
 } from 'vux'
+import axios from 'axios'
 export default {
   components: {
     Card,
@@ -41,7 +33,17 @@ export default {
     Cell,
     Tabbar,
     TabbarItem
-  }
+  },
+  data () {
+      return {
+          Grouplist: []
+      }
+  },
+  created() {
+    axios.get('static/worklist.json').then((res) => {
+      this.Grouplist = res.data
+    })
+  },
 }
 </script>
 <style>
