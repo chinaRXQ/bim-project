@@ -1,0 +1,20 @@
+[
+    { 
+        "id":1,
+        "name": "我的任务",
+        "pathrouter": "/PlanManagement",
+        "icon": "/static/img/myWorkProject.svg"
+    },
+    { 
+        "id":2,
+        "name": "签到",
+        "pathrouter": "/PlanManagement",
+        "icon": "/static/img/myWorkProject.svg"
+    },
+    { 
+        "id":3,
+        "name": "潇洒的",
+        "pathrouter": "/PlanManagement",
+        "icon": "/static/img/myWorkProject.svg"
+    }
+]

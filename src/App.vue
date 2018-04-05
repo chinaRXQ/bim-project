@@ -62,23 +62,23 @@
 
         <tabbar class="vux-demo-tabbar" icon-class="vux-center" v-show="!isTabbarDemo" slot="bottom">
            <tabbar-item :link="{path:'/PlanManagement'}" :selected="isDemo" badge="9">
-            <span slot="icon" class="icon-color"><img src="./assets/message.svg"></span>
+            <span slot="icon" class="icon-color"><img src="/static/img/message.svg"></span>
             <span slot="label"><span >消息</span></span>
           </tabbar-item>
           <tabbar-item :link="{path:'/ProductionManagement'}" :selected="isDemo" >
-            <span class="icon-color" slot="icon"><img src="./assets/production.svg"></span>
+            <span class="icon-color" slot="icon"><img src="/static/img/production.svg"></span>
             <span slot="label"><span >通讯录</span></span>
           </tabbar-item>
           <tabbar-item :link="{path:'/'}" :selected="route.path === '/'">
-            <span class="demo-icon-22 " slot="icon" ><img src="./assets/home.svg"></span>
+            <span class="demo-icon-22 " slot="icon" ><img src="/static/img/home.svg"></span>
             <span slot="label">工作</span>
           </tabbar-item>
           <tabbar-item :link="{path:'/ProgressManagement'}" :selected="isDemo" >
-            <span class="icon-color" slot="icon"><img src="./assets/progress.svg"></span>
+            <span class="icon-color" slot="icon"><img src="/static/img/progress.svg"></span>
             <span slot="label"><span >日程</span></span>
           </tabbar-item>
           <tabbar-item :link="{path:'/Message'}" :selected="isDemo" badge="9">
-            <span class="icon-color" slot="icon"><img src="./assets/message.svg"></span>
+            <span class="icon-color" slot="icon"><img src="/static/img/message.svg"></span>
             <span slot="label"><span >我</span></span>
           </tabbar-item>
         </tabbar>
@@ -212,7 +212,7 @@ export default {
     },
     title () {
       // 后续做个json定义路由与中文名称对照表
-      if (this.route.path === '/') return '首页'
+      if (this.route.path === '/') return '工作'
       if (this.route.path === '/ProgressManagement') return '进度管理'
       if (this.route.path === '/PlanManagement') return '计划管理'
       if (this.route.path === '/Message') return '消息'
