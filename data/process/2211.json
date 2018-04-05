@@ -1,0 +1,13 @@
+[{
+    "order":"1",
+    "name":"检查是否合格",
+    "excelname":"check.xls",
+    "excelfile":"2211-ckeck.xls",
+    "status":"true"
+},{
+    "order":"2",
+    "name":"监理同意书",
+    "excelname":"jianli.xls",
+    "excelfile":"2211-jianli.xls",
+    "status":"false"
+}]
