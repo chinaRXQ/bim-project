@@ -64,6 +64,14 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+app.use('/api/:apiname',function(req,res,next){
+  switch(req.params.apiname){
+    case 'task': res.jsonp(require('../data/task.json'));break;
+    case 'process':res.jsonp(require('../data/process/2211.json'));break;
+    case 'projectlist':res.jsonp(require('../data/projectlist.json'));break;
+    default: res.status(404).jsonp({"error": "404 Not Found"});break;
+  }
+})
 var uri = 'http://localhost:' + port
 
 var _resolve

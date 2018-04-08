@@ -1,53 +1,6 @@
 /* eslint-disable */
 // The Vue build version to load with the `import` command (runtime-only or
 // standalone) has been set in webpack.base.conf with an alias.
-// import Vue from 'vue'
-// import FastClick from 'fastclick'
-// import VueRouter from 'vue-router'
-// import Vuex from 'vuex'
-// import App from './App'
-
-// import Home from './components/Home'
-// import PlanManagement from './components/PlanManagement.vue'
-// import Message from './components/Message.vue'
-// import ProductionManagement from './components/ProductionManagement.vue'
-// import ProgressManagement from './components/ProgressManagement.vue'
-// import DataManagement from './components/DataManagement.vue'
-
-// Vue.use(VueRouter)
-// Vue.use(Vuex)
-// const routes = [
-  // {
-  //   path: '/',
-  //   component: Home
-  // }, {
-  //   path: '/PlanManagement',
-  //   component: PlanManagement
-  // }, {
-  //   path: '/Message',
-  //   component: Message
-  // }, {
-  //   path: '/ProductionManagement',
-  //   component: ProductionManagement
-  // },
-  // //  {   path: '/DataManagement',   component: DataManagement },
-  // {
-  //   path: '/ProgressManagement',
-  //   component: ProgressManagement
-  // }
-// ]
-
-// const router = new VueRouter({routes})
-
-// FastClick.attach(document.body)
-
-// Vue.config.productionTip = false
-
-// /* eslint-disable no-new */
-// new Vue({
-//   router,
-//   render: h => h(App)
-// }).$mount('#app-box')
 
 import objectAssign from 'object-assign'
 
@@ -66,6 +19,10 @@ import PlanManagement from './components/PlanManagement.vue'
 import Message from './components/Message.vue'
 import ProductionManagement from './components/ProductionManagement.vue'
 import ProgressManagement from './components/ProgressManagement.vue'
+
+import AddTask from './components/task/AddTask.vue'
+import LeftList from './components/task/LeftList.vue'
+import TaskList from './components/task/TaskList.vue'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
@@ -170,6 +127,19 @@ const routes = [
   {
     path: '/ProgressManagement',
     component: ProgressManagement
+  },
+  //任务路由
+  {
+    path: '/task/AddTask',
+    component: AddTask
+  },
+  {
+    path: '/task/LeftList',
+    component: LeftList
+  },
+  {
+    path: '/task/TaskList',
+    component: TaskList
   }
 ]
 
