@@ -1,11 +1,62 @@
 /* eslint-disable */
 // The Vue build version to load with the `import` command (runtime-only or
 // standalone) has been set in webpack.base.conf with an alias.
+// import Vue from 'vue'
+// import FastClick from 'fastclick'
+// import VueRouter from 'vue-router'
+// import Vuex from 'vuex'
+// import App from './App'
+
+// import Home from './components/Home'
+// import PlanManagement from './components/PlanManagement.vue'
+// import Message from './components/Message.vue'
+// import ProductionManagement from './components/ProductionManagement.vue'
+// import ProgressManagement from './components/ProgressManagement.vue'
+// import DataManagement from './components/DataManagement.vue'
+
+// Vue.use(VueRouter)
+// Vue.use(Vuex)
+// const routes = [
+  // {
+  //   path: '/',
+  //   component: Home
+  // }, {
+  //   path: '/PlanManagement',
+  //   component: PlanManagement
+  // }, {
+  //   path: '/Message',
+  //   component: Message
+  // }, {
+  //   path: '/ProductionManagement',
+  //   component: ProductionManagement
+  // },
+  // //  {   path: '/DataManagement',   component: DataManagement },
+  // {
+  //   path: '/ProgressManagement',
+  //   component: ProgressManagement
+  // }
+// ]
+
+// const router = new VueRouter({routes})
+
+// FastClick.attach(document.body)
+
+// Vue.config.productionTip = false
+
+// /* eslint-disable no-new */
+// new Vue({
+//   router,
+//   render: h => h(App)
+// }).$mount('#app-box')
+
+//const Vue = require('vue');
+//const VueResource = require('vue-resource');
+////Vue.use(VueResource);
 
 import objectAssign from 'object-assign'
 
 import Vue from 'vue'
-
+//import VueResource from 'vue-resource'
 import App from './App'
 
 import Vuex from 'vuex'
@@ -19,7 +70,9 @@ import PlanManagement from './components/PlanManagement.vue'
 import Message from './components/Message.vue'
 import ProductionManagement from './components/ProductionManagement.vue'
 import ProgressManagement from './components/ProgressManagement.vue'
-
+import TableOnline from './components/TableOnline.vue'
+import TableOne from './components/TableOne.vue'
+import TableTwo from './components/TableTwo.vue'
 import AddTask from './components/task/AddTask.vue'
 import LeftList from './components/task/LeftList.vue'
 import TaskList from './components/task/TaskList.vue'
@@ -38,6 +91,7 @@ let store = new Vuex.Store({
 
 // Vue.use(vuexI18n.plugin, store)
 Vue.use(vuexI18n.plugin, store)
+//Vue.use(VueResource)
 
 // const vuxLocales = require('json-loader!yaml-loader!./locales/all.yml')
 // const componentsLocales = require('json-loader!yaml-loader!./locales/components.yml')
@@ -127,19 +181,24 @@ const routes = [
   {
     path: '/ProgressManagement',
     component: ProgressManagement
-  },
-  //任务路由
-  {
-    path: '/task/AddTask',
-    component: AddTask
-  },
-  {
-    path: '/task/LeftList',
-    component: LeftList
-  },
-  {
-    path: '/task/TaskList',
-    component: TaskList
+  },{
+  	path:'/TableOnline',
+  	component:TableOnline
+  },{
+  	path:'/TableOne',
+  	component:TableOne
+  },{
+  	path:'/TableTwo',
+  	component:TableTwo
+  },{
+  	path:'/AddTask',
+  	component:AddTask
+  },{
+  	path:'/LeftList',
+  	component:LeftList
+  },{
+  	path:'/TaskList',
+  	component:TaskList
   }
 ]
 

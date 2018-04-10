@@ -1,49 +1,40 @@
 <!-- 工作首页 -->
 <template>
-    <div>
+    <!--<div>
         <grid :cols="3" :show-lr-borders="false">
-            <grid-item v-for="i in Grouplist" :key="i.id" :link="{ path: i.pathrouter }">
-                <img slot="icon" :src="i.icon">
-                <span slot="label">{{i.name}}</span>
-                <!-- <span class="grid-center">{{i.name}}</span> -->
+             <grid-item v-for="i in 6" :key="i">
+                <span class="grid-center">{{i}}</span>
+            </grid-item> 
+            <grid-item>
+                <span class="grid-center">我的任务</span>
+            </grid-item>
+            <grid-item>
+                <span class="grid-center">签到</span>
+            </grid-item>
+            <grid-item>
+                <span class="grid-center">在线填表</span>
+            </grid-item>
+            <grid-item>
+                <span class="grid-center">添加</span>
             </grid-item>
         </grid>
-    </div>
+    </div>--> 
+     <group>
+      <cell is-link title="我的任务" link="/TaskList"></cell>
+      <cell is-link title="签到" link="/PlanManagement"></cell>
+      <cell is-link title="在线填表" link="/TableOnline"></cell>
+      <cell is-link title="添加任务" link="/AddTask"></cell>
+    </group>
+    
+    
 </template>
 <script>
-/* eslint-disable */
-import {
-  Card,
-  XHeader,
-  Grid,
-  GridItem,
-  Group,
-  Cell,
-  Tabbar,
-  TabbarItem
-} from 'vux'
-import axios from 'axios'
+import {Group, Cell } from 'vux'
 export default {
-  components: {
-    Card,
-    XHeader,
-    Grid,
-    GridItem,
-    Group,
-    Cell,
-    Tabbar,
-    TabbarItem
-  },
-  data () {
-      return {
-          Grouplist: []
-      }
-  },
-  created() {
-    axios.get('static/worklist.json').then((res) => {
-      this.Grouplist = res.data
-    })
-  },
+  components:{
+  	Group,
+    Cell
+  }
 }
 </script>
 <style>

@@ -10,21 +10,24 @@
      <div class="msg_box">
           <div class="msg_wrap" style="display: block;">
             <div class="msg_body">
-              <div class="msg_a">明天做balabalablabla</div>
+              <!--<div class="msg_a">明天做balabalablabla</div>
               <div class="msg_a">B项目部要一吨钢材</div>
               <div class="msg_b">明天调货</div>
               <div class="msg_a">B项目部需要一部塔吊</div>
               <div class="msg_b">协调C项目部的塔吊运来</div>
               <div class="msg_a">C项目部还要用塔吊</div>
               <div class="msg_a">D项目部有空闲的塔吊</div>
-              <div class="msg_push"></div>
+              <div class="msg_push"></div>-->
+              <div :class="[{msg_a:index%2==0},{msg_b:(index+1)%2==0}]"   v-for="(message,index) in messages" :key="index">
+              	{{message}}
+              </div>
             </div>
             <div class="msg_footer">
-              <textarea class="msg_input" rows="4"></textarea>
+              <textarea class="msg_input" rows="4" v-model="textvalue"></textarea>
             </div>
           </div>
         </div>
-        <x-button plain>发送</x-button>
+        <button  @click="add" class="btn">发送</button>
         <!-- <button class="button is-link is-outlined is-fullwidth">
           发送
         </button> -->
@@ -81,7 +84,18 @@ export default {
     },
     onHide (type) {
       console.log('on hide', type)
-    }
+    },
+    add(){ 
+			    	if(this.textvalue.length==0){
+			    		alert("请输入！");
+			    	}else{
+						    	var data= this.textvalue;
+			            this.messages.push(data);
+						    	this.textvalue="";
+			    	}
+			   					 
+				}
+    
   },
   data () {
     return {
@@ -91,13 +105,27 @@ export default {
       formatDemoValue: ['01', '12'],
       format: function (value, name) {
         return `${value[0]}:${value[1]}`
-      }
+    },
+      messages:[ "明天做balabalablabl" ,
+					       "B项目部要一吨钢材,明天调货" ,
+					       "B项目部需要一部塔吊" ,
+					       "协调C项目部的塔吊运来" ,
+					       "C项目部还要用塔吊" ,
+					       "D项目部有空闲的塔吊" ,
+                 "明天调货"],
+      textvalue:""
     }
   }
 }
 </script>
 
 <style>
+.btn{
+		touch-action: none;
+		width:80%;
+		height: 35px;
+		margin-left: 30px;
+	}
 .vux-demo {
   text-align: center;
 }
@@ -121,6 +149,7 @@ export default {
   padding: 15px;
   overflow: auto;
   overflow-x: hidden;
+  height:350px;
 }
 .msg_input {
   width: 100%;
